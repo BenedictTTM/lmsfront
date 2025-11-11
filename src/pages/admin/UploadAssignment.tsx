@@ -112,11 +112,11 @@ const UploadAssignment = () => {
   };
 
   return (
-    <div className="ml-64 p-8 min-h-screen bg-gray-50">
+    <div className="lg:ml-64 p-4 sm:p-6 lg:p-8 min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Upload Assignment</h1>
-        <p className="text-gray-600">Create and distribute assignments to all students</p>
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Upload Assignment</h1>
+        <p className="text-sm sm:text-base text-gray-600">Create and distribute assignments to all students</p>
       </div>
 
       {/* Alert Messages */}
@@ -144,8 +144,8 @@ const UploadAssignment = () => {
 
       {/* Main Form Card */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-        <div className="p-8">
-          <form className="space-y-6">
+        <div className="p-4 sm:p-6 lg:p-8">
+          <form className="space-y-4 sm:space-y-6">
             {/* Title Field */}
             <div>
               <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-2">
@@ -160,7 +160,7 @@ const UploadAssignment = () => {
                   value={formData.title}
                   onChange={handleChange}
                   placeholder="e.g., Data Structures Assignment 1"
-                  className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all"
+                  className="w-full pl-11 pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all"
                   required
                 />
               </div>
@@ -178,7 +178,7 @@ const UploadAssignment = () => {
                 onChange={handleChange}
                 rows={4}
                 placeholder="Provide detailed instructions for the assignment..."
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all resize-none"
+                className="w-full px-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all resize-none"
                 required
               />
             </div>
@@ -196,7 +196,7 @@ const UploadAssignment = () => {
                   name="due_date"
                   value={formData.due_date}
                   onChange={handleChange}
-                  className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all"
+                  className="w-full pl-11 pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all"
                   required
                 />
               </div>
@@ -210,7 +210,7 @@ const UploadAssignment = () => {
               
               {/* Drag and Drop Zone */}
               <div
-                className={`relative border-2 border-dashed rounded-lg p-8 text-center transition-all ${
+                className={`relative border-2 border-dashed rounded-lg p-6 sm:p-8 text-center transition-all ${
                   dragActive 
                     ? 'border-red-500 bg-red-50' 
                     : formData.file 
@@ -240,23 +240,23 @@ const UploadAssignment = () => {
                       </div>
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900">{formData.file.name}</p>
-                      <p className="text-sm text-gray-500 mt-1">
+                      <p className="font-medium text-gray-900 text-sm sm:text-base break-all">{formData.file.name}</p>
+                      <p className="text-xs sm:text-sm text-gray-500 mt-1">
                         {formatFileSize(formData.file.size)}
                       </p>
                     </div>
-                    <div className="flex gap-3 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center">
                       <button
                         type="button"
                         onClick={handleFileSelect}
-                        className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                        className="flex-1 sm:flex-none px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
                       >
                         Change File
                       </button>
                       <button
                         type="button"
                         onClick={removeFile}
-                        className="px-4 py-2 text-sm font-medium text-red-700 bg-white border border-red-300 rounded-lg hover:bg-red-50 transition-colors flex items-center gap-2"
+                        className="flex-1 sm:flex-none px-4 py-2 text-sm font-medium text-red-700 bg-white border border-red-300 rounded-lg hover:bg-red-50 transition-colors flex items-center justify-center gap-2"
                       >
                         <X className="w-4 h-4" />
                         Remove
@@ -281,7 +281,7 @@ const UploadAssignment = () => {
                       </button>
                       <span className="text-gray-600"> or drag and drop</span>
                     </div>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-xs sm:text-sm text-gray-500">
                       PDF, DOC, DOCX, TXT, ZIP up to 10MB
                     </p>
                   </div>
@@ -292,11 +292,11 @@ const UploadAssignment = () => {
         </div>
 
         {/* Footer Actions */}
-        <div className="bg-gray-50 px-8 py-4 border-t border-gray-200 flex justify-between items-center">
+        <div className="bg-gray-50 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 border-t border-gray-200 flex flex-col sm:flex-row gap-3 sm:gap-0 justify-between items-stretch sm:items-center">
           <button
             type="button"
             onClick={() => navigate("/admin/dashboard")}
-            className="px-6 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+            className="order-2 sm:order-1 px-6 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
             disabled={loading}
           >
             Cancel
@@ -305,7 +305,7 @@ const UploadAssignment = () => {
             type="button"
             onClick={handleUpload}
             disabled={loading}
-            className="px-8 py-2.5 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+            className="order-1 sm:order-2 px-8 py-2.5 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
           >
             {loading ? (
               <>

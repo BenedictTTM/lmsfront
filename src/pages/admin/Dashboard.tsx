@@ -106,93 +106,95 @@ const Dashboard = () => {
   );
   
   return (
-    <div className="p-4 sm:p-6 lg:p-8  min-h-screen">
+    <div className="lg:ml-64 p-4 sm:p-6 lg:p-8 min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
-        <p className="text-red-900">Monitor and manage your learning management system</p>
+      <div className="max-w-7xl mx-auto mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
+        <p className="text-sm sm:text-base text-gray-600">Monitor and manage your learning management system</p>
       </div>
 
       {/* Statistics Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
-        <div className="bg-white rounded-lg  border border-gray-200 p-6 hover:shadow-xstransition-shadow">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-red-50 rounded-lg">
-              <Users className="w-6 h-6 text-red-600" />
+              <Users className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
             </div>
           </div>
-          <h3 className="text-gray-600 text-sm font-medium mb-1">Total Students</h3>
-          <p className="text-3xl font-bold text-gray-900">{stats?.overview?.total_students || 0}</p>
+          <h3 className="text-gray-600 text-xs sm:text-sm font-medium mb-1">Total Students</h3>
+          <p className="text-2xl sm:text-3xl font-bold text-gray-900">{stats?.overview?.total_students || 0}</p>
         </div>
 
-        <div className="bg-white rounded-lg  border border-gray-200 p-6 hover:shadow-xstransition-shadow">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-gray-100 rounded-lg">
-              <FileText className="w-6 h-6 text-gray-700" />
+              <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
             </div>
           </div>
-          <h3 className="text-gray-600 text-sm font-medium mb-1">Total Quizzes</h3>
-          <p className="text-3xl font-bold text-gray-900">{stats?.overview?.total_quizzes || 0}</p>
+          <h3 className="text-gray-600 text-xs sm:text-sm font-medium mb-1">Total Quizzes</h3>
+          <p className="text-2xl sm:text-3xl font-bold text-gray-900">{stats?.overview?.total_quizzes || 0}</p>
         </div>
 
-        <div className="bg-white rounded-lg  border border-gray-200 p-6 hover:shadow-xstransition-shadow">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-red-50 rounded-lg">
-              <Send className="w-6 h-6 text-red-600" />
+              <Send className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
             </div>
           </div>
-          <h3 className="text-gray-600 text-sm font-medium mb-1">Total Submissions</h3>
-          <p className="text-3xl font-bold text-gray-900">{stats?.overview?.total_submissions || 0}</p>
+          <h3 className="text-gray-600 text-xs sm:text-sm font-medium mb-1">Total Submissions</h3>
+          <p className="text-2xl sm:text-3xl font-bold text-gray-900">{stats?.overview?.total_submissions || 0}</p>
         </div>
 
-        <div className="bg-white rounded-lg  border border-gray-200 p-6 hover:shadow-xstransition-shadow">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-gray-100 rounded-lg">
-              <TrendingUp className="w-6 h-6 text-gray-700" />
+              <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
             </div>
           </div>
-          <h3 className="text-gray-600 text-sm font-medium mb-1">Average Score</h3>
-          <p className="text-3xl font-bold text-gray-900">{stats?.overview?.average_score || 0}%</p>
+          <h3 className="text-gray-600 text-xs sm:text-sm font-medium mb-1">Average Score</h3>
+          <p className="text-2xl sm:text-3xl font-bold text-gray-900">{stats?.overview?.average_score || 0}%</p>
         </div>
       </div>
 
       {/* Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        <div className="bg-white rounded-lg  border border-gray-200 p-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-6">Monthly Submissions</h2>
-          <ResponsiveContainer width="100%" height={300}>
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
+          <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Monthly Submissions</h2>
+          <ResponsiveContainer width="100%" height={250}>
             <BarChart data={stats?.monthlyStats || []}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-              <XAxis dataKey="month" stroke="#6b7280" />
-              <YAxis stroke="#6b7280" />
+              <XAxis dataKey="month" stroke="#6b7280" style={{ fontSize: '12px' }} />
+              <YAxis stroke="#6b7280" style={{ fontSize: '12px' }} />
               <Tooltip 
                 contentStyle={{ 
                   backgroundColor: '#fff', 
                   border: '1px solid #e5e7eb',
-                  borderRadius: '0.5rem'
+                  borderRadius: '0.5rem',
+                  fontSize: '14px'
                 }}
               />
-              <Legend />
+              <Legend wrapperStyle={{ fontSize: '14px' }} />
               <Bar dataKey="submissions" fill="#ef4444" />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white rounded-lg  border border-gray-200 p-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-6">Average Scores Trend</h2>
-          <ResponsiveContainer width="100%" height={300}>
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
+          <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Average Scores Trend</h2>
+          <ResponsiveContainer width="100%" height={250}>
             <LineChart data={stats?.monthlyStats || []}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-              <XAxis dataKey="month" stroke="#6b7280" />
-              <YAxis stroke="#6b7280" />
+              <XAxis dataKey="month" stroke="#6b7280" style={{ fontSize: '12px' }} />
+              <YAxis stroke="#6b7280" style={{ fontSize: '12px' }} />
               <Tooltip 
                 contentStyle={{ 
                   backgroundColor: '#fff', 
                   border: '1px solid #e5e7eb',
-                  borderRadius: '0.5rem'
+                  borderRadius: '0.5rem',
+                  fontSize: '14px'
                 }}
               />
-              <Legend />
+              <Legend wrapperStyle={{ fontSize: '14px' }} />
               <Line type="monotone" dataKey="average_score" stroke="#6b7280" strokeWidth={2} />
             </LineChart>
           </ResponsiveContainer>
@@ -200,9 +202,9 @@ const Dashboard = () => {
       </div>
 
       {/* Students Table */}
-      <div className="bg-white rounded-lg  border border-gray-200">
-        <div className="p-6 border-b border-gray-200">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Students</h2>
+      <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-sm border border-gray-200">
+        <div className="p-4 sm:p-6 border-b border-gray-200">
+          <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Students</h2>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
@@ -210,7 +212,7 @@ const Dashboard = () => {
               placeholder="Search students by name or email..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
+              className="w-full pl-10 pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
             />
           </div>
         </div>
@@ -219,11 +221,11 @@ const Dashboard = () => {
           <table className="w-full">
             <thead>
               <tr className="bg-gray-50 border-b border-gray-200">
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Name</th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Email</th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Student ID</th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Quizzes Taken</th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Average Score</th>
+                <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Name</th>
+                <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider hidden md:table-cell">Email</th>
+                <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Student ID</th>
+                <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider hidden sm:table-cell">Quizzes</th>
+                <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Avg Score</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
@@ -233,18 +235,19 @@ const Dashboard = () => {
                   onClick={() => handleStudentClick(student.id)}
                   className="hover:bg-gray-50 cursor-pointer transition-colors"
                 >
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="font-medium text-gray-900">{`${student.first_name} ${student.last_name}`}</div>
+                  <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap">
+                    <div className="text-sm sm:text-base font-medium text-gray-900">{`${student.first_name} ${student.last_name}`}</div>
+                    <div className="text-xs text-gray-500 md:hidden">{student.email}</div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">{student.email}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">{student.username}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm sm:text-base text-gray-600 hidden md:table-cell">{student.email}</td>
+                  <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-600">{student.username}</td>
+                  <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap hidden sm:table-cell">
                     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
                       {student.quizzes_taken}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                  <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap">
+                    <span className={`inline-flex items-center px-2 sm:px-2.5 py-0.5 rounded-full text-xs font-medium ${
                       student.average_score >= 80 ? 'bg-green-100 text-green-800' :
                       student.average_score >= 60 ? 'bg-yellow-100 text-yellow-800' :
                       'bg-red-100 text-red-800'

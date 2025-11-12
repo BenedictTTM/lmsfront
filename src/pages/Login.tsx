@@ -56,10 +56,10 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex">
-      {/* Left Panel - Sharks Logo */}
+    <div className="min-h-screen flex flex-col lg:flex-row">
+      {/* Left Panel - Sharks Logo (Desktop & Tablet) */}
       <div 
-        className="hidden lg:flex lg:w-3/5 relative overflow-hidden items-center justify-center "
+        className="hidden md:flex md:w-2/5 lg:w-3/5 relative overflow-hidden items-center justify-center"
         style={{
           backgroundImage: 'url(/sharkslogo.png)',
           backgroundSize: 'cover',
@@ -70,8 +70,19 @@ const Login = () => {
       </div>
 
       {/* Right Panel - Login Form */}
-  <div className="w-full lg:w-2/5 flex items-center justify-center px-12 py-12">
-        <div className="w-full max-w-screen-sm space-y-8">
+      <div className="w-full md:w-3/5 lg:w-2/5 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-6 sm:py-8 md:py-12 bg-white">
+        {/* Mobile Logo */}
+        <div className="md:hidden w-full mb-6 sm:mb-8">
+          <div className="flex justify-center">
+            <img 
+              src="/sharkslogo.png" 
+              alt="Sharks Logo" 
+              className="h-24 sm:h-32 w-auto object-contain"
+            />
+          </div>
+        </div>
+
+        <div className="w-full max-w-md space-y-4 sm:space-y-6 lg:space-y-8">
           {/* Alert Messages */}
           {alert && (
             <div
@@ -100,23 +111,23 @@ const Login = () => {
           )}
 
           {/* Login Header */}
-          <div className="text-left mb-8 pt-8">
-            <h1 className="lg:text-2xl sm:text:lg font-bold text-gray-900 mb-2">Log in to Your Account</h1>
-            <p className="text-red-900 text-base">Enter your details below</p>
+          <div className="text-center md:text-left mb-4 sm:mb-6 lg:mb-8">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Log in to Your Account</h1>
+            <p className="text-gray-600 text-xs sm:text-sm lg:text-base">Enter your details below</p>
           </div>
 
           {/* Login Form */}
-          <form className="space-y-6" onSubmit={handleSubmit} noValidate>
-            <div className="space-y-4">
+          <form className="space-y-4 sm:space-y-5 lg:space-y-6" onSubmit={handleSubmit} noValidate>
+            <div className="space-y-3 sm:space-y-4">
               {/* Username Field */}
-              <div className="pt-2">
+              <div>
                 <input
                   id="username"
                   name="username"
                   type="text"
                   autoComplete="username"
-                  placeholder="benedict@gmail.com"
-                  className="appearance-none relative block w-full px-4 py-2.5  border-0 border-b-2  placeholder-gray-900 text-gray-900 focus:outline-none focus:border-red-500  sm:text-base"
+                  placeholder="palomakut1@gmail.com"
+                  className="appearance-none relative block w-full px-3 sm:px-4 py-2 sm:py-2.5 border-0 border-b-2 border-gray-300 placeholder-gray-400 text-gray-900 focus:outline-none focus:border-red-500 text-sm sm:text-base bg-gray-50 transition-colors"
                   value={formData.username}
                   onChange={handleChange}
                 />
@@ -130,7 +141,7 @@ const Login = () => {
                   type="password"
                   autoComplete="current-password"
                   placeholder="••••••••••••••••••••"
-                  className="appearance-none relative block w-full px-4 py-2.5  border-0 border-b-2 border-gray-300 placeholder-gray-900 text-gray-900 focus:outline-none focus:border-red-500 sm:text-base"
+                  className="appearance-none relative block w-full px-3 sm:px-4 py-2 sm:py-2.5 border-0 border-b-2 border-gray-300 placeholder-gray-400 text-gray-900 focus:outline-none focus:border-red-500 text-sm sm:text-base bg-gray-50 transition-colors"
                   value={formData.pin}
                   onChange={handleChange}
                 />
@@ -138,11 +149,11 @@ const Login = () => {
             </div>
 
             {/* Login Button */}
-            <div>
+            <div className="pt-1 sm:pt-2">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group relative w-full flex justify-center py-2.5 px-2 border border-transparent text-base font-semibold rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="group relative w-full flex justify-center py-2.5 sm:py-3 px-4 border border-transparent text-sm sm:text-base font-semibold rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
               >
                 {isSubmitting ? "LOGGING IN..." : "Log In"}
               </button>
@@ -153,7 +164,7 @@ const Login = () => {
               <button 
                 type="button"
                 onClick={() => {/* TODO: Implement forgot password */}}
-                className="text-sm text-red-600 hover:text-red-500 font-medium bg-transparent border-none cursor-pointer"
+                className="text-xs sm:text-sm text-red-600 hover:text-red-500 font-medium bg-transparent border-none cursor-pointer transition-colors"
               >
                 Forgot Password?
               </button>
@@ -161,12 +172,12 @@ const Login = () => {
           </form>
 
           {/* Divider */}
-          <div className="relative my-8">
+          <div className="relative my-6 sm:my-8">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-300"></div>
             </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-4 bg-gray-50 text-gray-500">Or continue with</span>
+            <div className="relative flex justify-center text-xs sm:text-sm">
+              <span className="px-3 sm:px-4 bg-white text-gray-500">Or continue with</span>
             </div>
           </div>
 

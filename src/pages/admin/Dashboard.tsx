@@ -163,7 +163,7 @@ const Dashboard = () => {
             <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Monthly Submissions</h2>
             <div className="w-full h-[200px] sm:h-[250px]">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={stats?.monthlyStats || []} margin={{ top: 5, right: 5, left: -20, bottom: 5 }}>
+                <BarChart data={stats?.monthlyStats || []} margin={{ top: 5, right: 16, left: 0, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                   <XAxis dataKey="month" stroke="#6b7280" style={{ fontSize: '10px' }} />
                   <YAxis stroke="#6b7280" style={{ fontSize: '10px' }} />
@@ -186,7 +186,7 @@ const Dashboard = () => {
             <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Average Scores Trend</h2>
             <div className="w-full h-[200px] sm:h-[250px]">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={stats?.monthlyStats || []} margin={{ top: 5, right: 5, left: -20, bottom: 5 }}>
+                <LineChart data={stats?.monthlyStats || []} margin={{ top: 5, right: 16, left: 0, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                   <XAxis dataKey="month" stroke="#6b7280" style={{ fontSize: '10px' }} />
                   <YAxis stroke="#6b7280" style={{ fontSize: '10px' }} />

@@ -106,16 +106,16 @@ const Dashboard = () => {
   );
   
   return (
-    <div className="lg:ml-64 min-h-screen overflow-x-hidden">
-      <div className="p-4 sm:p-6 lg:p-8 w-full">
+    <div className="min-h-screen w-full overflow-x-hidden">
+      <div className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {/* Header */}
-        <div className="max-w-7xl mx-auto mb-6 sm:mb-8">
+        <div className="mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
           <p className="text-sm sm:text-base text-red-900">Monitor and manage your learning management system</p>
         </div>
 
-        {/* Statistics Cards */}
-        <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
+    {/* Statistics Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-3 sm:p-4 lg:p-6 hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between mb-3 sm:mb-4">
               <div className="p-2 sm:p-3 bg-red-50 rounded-lg">
@@ -158,8 +158,8 @@ const Dashboard = () => {
         </div>
 
         {/* Charts */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 min-w-0">
             <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Monthly Submissions</h2>
             <div className="w-full h-[200px] sm:h-[250px]">
               <ResponsiveContainer width="100%" height="100%">
@@ -182,7 +182,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 min-w-0">
             <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Average Scores Trend</h2>
             <div className="w-full h-[200px] sm:h-[250px]">
               <ResponsiveContainer width="100%" height="100%">
@@ -206,8 +206,8 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Students Table */}
-        <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+  {/* Students Table */}
+  <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
           <div className="p-4 sm:p-6 border-b border-gray-200">
             <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Students</h2>
             <div className="relative">
@@ -222,7 +222,7 @@ const Dashboard = () => {
             </div>
           </div>
           
-          <div className="overflow-x-auto -mx-4 sm:mx-0">
+          <div className="overflow-x-auto">
             <div className="inline-block min-w-full align-middle">
               <table className="min-w-full divide-y divide-gray-200">
                 <thead>
@@ -241,18 +241,18 @@ const Dashboard = () => {
                       onClick={() => handleStudentClick(student.id)}
                       className="hover:bg-gray-50 cursor-pointer transition-colors"
                     >
-                      <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap">
+                      <td className="px-3 sm:px-6 py-3 sm:py-4 sm:whitespace-nowrap">
                         <div className="text-sm sm:text-base font-medium text-gray-900">{`${student.first_name} ${student.last_name}`}</div>
                         <div className="text-xs text-gray-500 md:hidden">{student.email}</div>
                       </td>
                       <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm sm:text-base text-gray-600 hidden md:table-cell">{student.email}</td>
-                      <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-600">{student.username}</td>
-                      <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap hidden sm:table-cell">
+                      <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-normal sm:whitespace-nowrap text-xs sm:text-sm text-gray-600">{student.username}</td>
+                      <td className="px-3 sm:px-6 py-3 sm:py-4 sm:whitespace-nowrap hidden sm:table-cell">
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
                           {student.quizzes_taken}
                         </span>
                       </td>
-                      <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap">
+                      <td className="px-3 sm:px-6 py-3 sm:py-4 sm:whitespace-nowrap">
                         <span className={`inline-flex items-center px-2 sm:px-2.5 py-0.5 rounded-full text-xs font-medium ${
                           student.average_score >= 80 ? 'bg-green-100 text-green-800' :
                           student.average_score >= 60 ? 'bg-yellow-100 text-yellow-800' :

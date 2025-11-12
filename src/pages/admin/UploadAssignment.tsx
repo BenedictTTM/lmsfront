@@ -112,7 +112,7 @@ const UploadAssignment = () => {
   };
 
   return (
-    <div className="lg:ml-64  lg:p-8 min-h-screen ">
+    <div className="min-h-screen w-full overflow-x-hidden px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
       {/* Header */}
       <div className="mb-6 sm:mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Upload Assignment</h1>
@@ -292,7 +292,7 @@ const UploadAssignment = () => {
         </div>
 
         {/* Footer Actions */}
-        <div className=" px-4 sm:px-6 lg:px-8 py-3 sm:py-4 border-t border-gray-200 flex flex-col sm:flex-row gap-3 sm:gap-0 justify-between items-stretch sm:items-center">
+  <div className="px-4 sm:px-6 lg:px-8 py-3 sm:py-4 border-t border-gray-200 flex flex-col sm:flex-row gap-3 sm:gap-0 justify-between items-stretch sm:items-center">
           <button
             type="button"
             onClick={() => navigate("/admin/dashboard")}

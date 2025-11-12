@@ -107,15 +107,15 @@ const Dashboard = () => {
   
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
-      <div className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+      <div className=" lg:px-2 py-6 sm:py-8">
         {/* Header */}
         <div className="mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
           <p className="text-sm sm:text-base text-red-900">Monitor and manage your learning management system</p>
         </div>
 
-    {/* Statistics Cards */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
+  {/* Statistics Cards */}
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-3 sm:p-4 lg:p-6 hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between mb-3 sm:mb-4">
               <div className="p-2 sm:p-3 bg-red-50 rounded-lg">

@@ -98,7 +98,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
       {/* Sidebar Header */}
       <div className={`flex items-center p-4 border-b border-gray-50 ${collapsed ? 'justify-center' : 'justify-between'}`}>
         {!collapsed && (
-          <h2 className="font-bold text-lg truncate text-gray-900">
+          <h2 className="font-semibold text-lg truncate text-gray-900" style={{ fontFamily: "'Brush Script MT', cursive" }}>
             {userRole === 'admin' ? 'Admin Panel' : 'Student Portal'}
           </h2>
         )}

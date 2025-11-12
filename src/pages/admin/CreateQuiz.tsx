@@ -87,7 +87,7 @@ const CreateQuiz = () => {
   };
 
   return (
-    <div className="min-h-screen  p-3 sm:p-4 lg:p-6">
+    <div className="min-h-screen  ">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="mb-6">

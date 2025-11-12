@@ -172,12 +172,12 @@ const Login = () => {
           </form>
 
           {/* Divider */}
-          <div className="relative my-6 sm:my-8">
+          <div className="relative my-4 sm:my-6 lg:my-8">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-300"></div>
             </div>
             <div className="relative flex justify-center text-xs sm:text-sm">
-              <span className="px-3 sm:px-4 bg-white text-gray-500">Or continue with</span>
+              <span className="px-2 sm:px-3 lg:px-4 bg-white text-gray-500">Or continue with</span>
             </div>
           </div>
 
@@ -185,9 +185,9 @@ const Login = () => {
           <div>
             <button
               type="button"
-              className="w-full flex items-center justify-center gap-3 py-3 px-4 border border-gray-300 rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 font-medium"
+              className="w-full flex items-center justify-center gap-2 sm:gap-3 py-2.5 sm:py-3 px-4 border border-gray-300 rounded-lg text-sm sm:text-base text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 font-medium transition-all duration-200"
             >
-              <svg className="w-5 h-5" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" viewBox="0 0 24 24">
                 <path
                   fill="#4285F4"
                   d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -205,22 +205,22 @@ const Login = () => {
                   d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
                 />
               </svg>
-              Continue with Google
+              <span className="truncate">Continue with Google</span>
             </button>
           </div>
 
           {/* Sign Up Link */}
-          <div className="text-center mt-6">
-            <p className="text-sm text-gray-600">
+          <div className="text-center mt-4 sm:mt-6">
+            <p className="text-xs sm:text-sm text-gray-600">
               Don't have an account?{" "}
-              <a href="/signup" className="font-semibold text-red-600 hover:text-red-500">
+              <a href="/signup" className="font-semibold text-red-600 hover:text-red-500 transition-colors">
                 Sign up here
               </a>
             </p>
           </div>
 
           {/* Footer */}
-          <div className="mt-8 text-center">
+          <div className="mt-6 sm:mt-8 text-center">
             <AuthFooter />
           </div>
         </div>
